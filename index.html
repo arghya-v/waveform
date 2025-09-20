@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Visualizer</title>
+  <style>
+    body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  font-family: "Poppins", sans-serif;
+  color: #e0e0e0;
+}
+
+
+.canvas {
+  display: block;
+  background: rgba(20, 20, 20, 0.35);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+#controls {
+  display: flex;
+  gap: 12px;
+  padding: 12px 18px;
+  background: rgba(30, 30, 30, 0.4);
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+button,
+label {
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: rgba(79, 70, 229, 0.2);
+  color: #ffffff;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+button:hover,
+label:hover {
+  background: rgba(99, 90, 255, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(99, 90, 255, 0.4);
+}
+
+button:active,
+label:active {
+  transform: translateY(0);
+  box-shadow: 0 0 6px rgba(99, 90, 255, 0.5) inset;
+}
+
+
+input[type="file"] {
+  display: none;
+}
+  </style>
+</head>
+<body>
+  <h1>Audio Visualizer!</h1>
+  <p>by Arghya Vyas</p>
+  <canvas id="canvas" class="canvas" width="800" height="400"></canvas>
+
+<div id="controls">
+  <label for="fileInput" id="uploadLabel">Upload</label>
+  <input type="file" id="fileInput" accept=".mp3,.wav,.ogg,.flac,audio/*" />
+  <button id="play">▶ Play</button>
+  <button id="stop">⏹ Stop</button>
+  <button id="barsMode">Bars</button>
+  <button id="symBarsMode">Sym Bars</button>
+  <button id="waveMode">Wave</button>
+</div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
