@@ -72,7 +72,7 @@ function draw() {
       const yTop = (canvas.height / 2) - barHeight;
       const yBottom = (canvas.height / 2);
 
-      ctx.fillStyle = "#000000ff";
+      ctx.fillStyle = "#dfdfdfff";
       ctx.fillRect(x, yTop, barWidth * 0.8, barHeight); 
       ctx.fillRect(x, yBottom, barWidth * 0.8, barHeight); 
     }
