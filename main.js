@@ -166,15 +166,16 @@ async function decodeAudioFile(file) {
 const fileInput = document.getElementById("fileInput");
 const uploadLabel = document.getElementById("uploadLabel");
 
+const audioName = document.getElementById("audioName");
+
 fileInput.onchange = async (event) => {
   const file = event.target.files[0];
   if (file) {
     selectedBuffer = await decodeAudioFile(file);
     console.log("Loaded:", file.name);
     uploadLabel.textContent = "File uploaded ✔";
-    setTimeout(() => {
-      uploadLabel.textContent = "Upload File";
-    }, 2000);
+    audioName.textContent = file.name; 
+    setTimeout(() => { uploadLabel.textContent = "Upload"; }, 2000);
   }
 };
 
